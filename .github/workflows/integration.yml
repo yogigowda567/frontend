@@ -26,7 +26,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm i
-    - run: npm run build 
+    - run: npm run build
 
   unit-tests:
 
@@ -45,5 +45,6 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm i
-    - run: npm run test
+    - name: "Running test cases"
+      run: npm run test
     
