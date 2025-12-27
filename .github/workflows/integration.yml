@@ -27,7 +27,7 @@ jobs:
     - run: npm ci
     - run: npm run build 
 
-  unit-tests:
+  unit-test:
 
     runs-on: ubuntu-latest
 
