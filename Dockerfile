@@ -1,5 +1,5 @@
 # Stage 1: Build React app
-FROM public.ecr.aws/docker/library/node:22.11.0 AS build
+FROM node:22.11.0 AS build
 WORKDIR /app
 COPY . .
 
@@ -10,7 +10,7 @@ RUN npm install --legacy-peer-deps \
   && npm install --legacy-peer-deps
 
 # Stage 2: Run the BFF Server
-FROM public.ecr.aws/docker/library/node:22-alpine AS final
+FROM node:22-alpine AS final
 WORKDIR /server
 
 COPY --from=build /app/server .
